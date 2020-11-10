@@ -1,0 +1,30 @@
+{
+    "responses": {},
+    "validcp": [1200, 1300, 1400],
+    "burrobox": {
+        "food": {
+            "inlet": [
+                { 
+                    "id": "00",
+                    "name": "Papas a la francesa",
+                    "price": 15 
+                },
+                {
+                    "id": "01",
+                    "name": "Papas gajo",
+                    "price": 15
+                },
+                {
+                    "id": "02",
+                    "name": "Nachos al pastor",
+                    "price": 59
+                },
+                {
+                    "id": "03",
+                    "name": "Nachos de asada",
+                    "price": 59
+                }
+            ]
+        }
+    }
+}

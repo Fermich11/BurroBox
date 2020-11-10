@@ -1,14 +1,15 @@
 const fs = require('fs')
-var express = require('express')
-var app = express()
+const express = require('express')
+const favicon = require('serve-favicon');
+const path = require('path');
 const config = require('./config.json')
 const { WAConnection, MessageType, Mimetype} = require('@adiwajshing/baileys')
 const pug = require('pug');
 
+
+const app = express()
+
 const conversations = {}
-const validCp = config.validAddress.map(address => {
-    return address.cp
-})
 
 async function connectToWhatsApp () {
     const conn = new WAConnection() 
@@ -91,8 +92,23 @@ function newConversation(id) {
     }
 } 
 
+// Express
+
+const itemsTemplate = fs.readFileSync(__dirname + '/src/order-item/item.html', 'utf8')
 app.get('/order', function (req, res) {
-    res.send(pug.renderFile('./src/order-page/order.pug'))
+    fs.readFile(__dirname + '/src/order-page/order.html', 'utf8', (err, html) => {
+        let items = '';
+        config.burrobox.food.inlet.forEach((item) => {
+            let itemTemplate = itemsTemplate;
+            itemTemplate = itemTemplate.replace('{name}', item.name)
+            itemTemplate = itemTemplate.replace('{price}', item.price)
+            items = items.concat(itemTemplate)
+        })
+
+        html = html.replace('{inlet}', items)
+        res.set('Content-Type', 'text/html')
+        res.send(html)
+    })
 })
 
 app.get('/src/*/', function (req, res) {
@@ -102,12 +118,13 @@ app.get('/src/*/', function (req, res) {
         }
 
         try {
-            console.log('-------------> ', req.path, file)
             res.send(file)
         } catch (e) {
             res.status(e.status).end()
         }
     })
 })
+
+app.use(favicon(__dirname + '/src/img/burro_bot.png'))
   
 app.listen(3000)

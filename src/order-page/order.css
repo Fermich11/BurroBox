@@ -1,0 +1,39 @@
+body {
+    background-image: url('../img/bricks.jpg');
+}
+
+div#header {
+    margin: 6%;
+}
+
+div#header img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+}
+
+div#food {
+    width: 90%;
+    height: 70%;
+    background: azure;
+    display: block;
+    margin: 4%;
+}
+
+p.section {
+    font-size: 3.5rem;
+    padding: 4%;
+    background-color: lightblue;
+}  
+
+div.item {
+    font-size: 2.5rem;
+    display: block ruby;
+    margin-left: 4%;
+}
+
+input[type=number] {
+    font-size: 2.5rem;
+    width: 10%;
+    height: 4rem;
+}
