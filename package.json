@@ -1,0 +1,16 @@
+{
+  "name": "burrobot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "./index.js"
+  },
+  "author": "fermich11",
+  "license": "ISC",
+  "dependencies": {
+    "@adiwajshing/baileys": "github:adiwajshing/Baileys",
+    "express": "^4.17.1",
+    "pug": "^3.0.0"
+  }
+}
