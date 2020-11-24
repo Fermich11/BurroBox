@@ -24,6 +24,43 @@
                     "name": "Nachos de asada",
                     "price": 59
                 }
+            ],
+            "burros": [
+                {
+                    "id": "04",
+                    "name": "Burro de Pastor",
+                    "price": 79
+                },
+                {
+                    "id": "05",
+                    "name": "Burro Clásico",
+                    "price": 79
+                },
+                {
+                    "id": "06",
+                    "name": "Burro de Pollo",
+                    "price": 79
+                },
+                {
+                    "id": "07",
+                    "name": "Burro de de Boneless Búfalo",
+                    "price": 89
+                },
+                {
+                    "id": "08",
+                    "name": "Burro de Boneless BBQ",
+                    "price": 89
+                },
+                {
+                    "id": "09",
+                    "name": "Burro de Cochinita",
+                    "price": 74
+                },
+                {
+                    "id": "10",
+                    "name": "Burro Capitán",
+                    "price": 84
+                }
             ]
         }
     }

@@ -97,15 +97,25 @@ function newConversation(id) {
 const itemsTemplate = fs.readFileSync(__dirname + '/src/order-item/item.html', 'utf8')
 app.get('/order', function (req, res) {
     fs.readFile(__dirname + '/src/order-page/order.html', 'utf8', (err, html) => {
-        let items = '';
+        let inlet = ''
+        let burros = ''
         config.burrobox.food.inlet.forEach((item) => {
             let itemTemplate = itemsTemplate;
             itemTemplate = itemTemplate.replace('{name}', item.name)
             itemTemplate = itemTemplate.replace('{price}', item.price)
-            items = items.concat(itemTemplate)
+            inlet = inlet.concat(itemTemplate)
         })
 
-        html = html.replace('{inlet}', items)
+        config.burrobox.food.inlet.forEach((item) => {
+            let itemTemplate = itemsTemplate;
+            itemTemplate = itemTemplate.replace('{name}', item.name)
+            itemTemplate = itemTemplate.replace('{price}', item.price)
+            burros = burros.concat(itemTemplate)
+        })
+
+        html = html.replace('{inlet}', inlet)
+        html = html.replace('{burros}', burros)
+
         res.set('Content-Type', 'text/html')
         res.send(html)
     })

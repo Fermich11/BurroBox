@@ -18,6 +18,7 @@ div#food {
     background: azure;
     display: block;
     margin: 4%;
+    overflow: auto;
 }
 
 p.section {
