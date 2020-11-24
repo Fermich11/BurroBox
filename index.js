@@ -4,7 +4,6 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const config = require('./config.json')
 const { WAConnection, MessageType, Mimetype} = require('@adiwajshing/baileys')
-const pug = require('pug');
 
 
 const app = express()

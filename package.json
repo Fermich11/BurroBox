@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "./index.js"
+    "start": "node index.js"
   },
   "author": "fermich11",
   "license": "ISC",
   "dependencies": {
     "@adiwajshing/baileys": "github:adiwajshing/Baileys",
     "express": "^4.17.1",
-    "pug": "^3.0.0",
     "serve-favicon": "^2.5.0"
   }
 }
