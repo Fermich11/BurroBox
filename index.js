@@ -105,7 +105,7 @@ app.get('/order', function (req, res) {
             inlet = inlet.concat(itemTemplate)
         })
 
-        config.burrobox.food.inlet.forEach((item) => {
+        config.burrobox.food.burros.forEach((item) => {
             let itemTemplate = itemsTemplate;
             itemTemplate = itemTemplate.replace('{name}', item.name)
             itemTemplate = itemTemplate.replace('{price}', item.price)
