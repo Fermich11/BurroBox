@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "./index.js"
+    "start": "./index.js"
   },
   "author": "fermich11",
   "license": "ISC",
