@@ -1,16 +1,20 @@
 body {
-    background-image: url('../img/bricks.jpg');
     font-family: sans;
 }
 
 div#header {
-    margin: 6%;
+    margin: 0%;
+    background-color: rgba(0,0,0,0.9);
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 div#header img {
     width: 10rem;
     height: 10rem;
     border-radius: 100%;
+    margin-left: 5%;
 }
 
 div#food {
@@ -24,12 +28,20 @@ div#food {
 
 p.section {
     padding: 4%;
-    background-color: red;
+    background-color: #ac2925;
     color: white;
+    border-radius: 80px;
 }  
 
 ul {
     list-style-type: none;
+}
+
+li {
+    border-bottom-width: 2px;
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    padding-bottom: 4%;
 }
 
 input[type=number] {
@@ -38,13 +50,19 @@ input[type=number] {
     font-size: 3.5rem;
 }
 
-input[type=button] {
+input#order {
     width: 30%;
     height: 8%;
     text-align: center;
     margin-left: 35%;
     font-size: xxx-large;
+}
+
+input[type=button] {
     border-radius: 14%;
     border-width: 0.5rem;
     border-style: solid;
+    background: white;
+    border-color: #ac2925;
+    color: #ac2925;
 }
