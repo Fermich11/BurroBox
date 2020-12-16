@@ -1,17 +1,17 @@
 const fs = require('fs')
+const QRCode = require('qrcode')
 const express = require('express')
 const favicon = require('serve-favicon');
 const config = require('./config.json')
 const { WAConnection, MessageType, Mimetype} = require('@adiwajshing/baileys');
-const e = require('express');
 const appUrl = 'https://burrobot12.herokuapp.com'
 const app = express()
 
 async function runServer() {
+    let qr;
     const conn = new WAConnection() 
-    
-    await conn.connect ()
-    const myId = conn.user.jid
+
+    conn.on('qr', newQr => qr = newQr)    
 
     function sendText (id, message) {
         try {
@@ -21,6 +21,8 @@ async function runServer() {
         }
     }
     
+
+    console.log(qr)
     function sendImage (id, filename) {
         try {
             const buffer = fs.readFileSync(`Media/${filename}.jpeg`) // load some gi
@@ -91,9 +93,18 @@ async function runServer() {
         })
     })
 
+    app.get('/qr', (req, res) => {
+        QRCode.toFile(__dirname + '/src/img/scan.qr', qr).then(file => {
+            const html = `<html><image src="/src/img/scan.png" width="500"></html>`
+            res.set('Content-Type', 'text/html')
+            res.send(html)
+        })
+    })
+
     app.use(favicon(__dirname + '/src/img/burro_bot.png'))
     
     app.listen(process.env.PORT || 3000)
+    await conn.connect ()
 }
 
 runServer().catch(e => console.log)
