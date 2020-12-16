@@ -20,7 +20,6 @@ div#header img {
 div#food {
     width: 90%;
     height: 70%;
-    display: block;
     margin: 4%;
     overflow: auto;
     font-size: 3.5rem;
@@ -34,14 +33,21 @@ p.section {
 }  
 
 ul {
-    list-style-type: none;
+    display: inline;
 }
 
 li {
-    border-bottom-width: 2px;
-    border-bottom-color: gray;
-    border-bottom-style: solid;
     padding-bottom: 4%;
+}
+
+li div {
+    float: left;
+    width: 85%;
+}
+
+li input {
+    float: right;
+    font-size: xx-large;
 }
 
 input[type=number] {
